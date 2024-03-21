@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="PiCar_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="8.232E-05 -0.068754 0.01704"
+        rpy="0 0 0" />
+      <mass
+        value="1.1902" />
+      <inertia
+        ixx="0.001539"
+        ixy="-2.1481E-06"
+        ixz="-1.2431E-07"
+        iyy="0.00060654"
+        iyz="8.85E-05"
+        izz="0.0015606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ros2_picar/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96471 0.96471 0.95294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ros2_picar/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="laser_scan">
+    <inertial>
+      <origin
+        xyz="-0.0083106 5.2042E-18 0.010926"
+        rpy="0 0 0" />
+      <mass
+        value="0.14536" />
+      <inertia
+        ixx="5.7657E-05"
+        ixy="2.1176E-21"
+        ixz="-1.9773E-05"
+        iyy="0.00010399"
+        iyz="3.1764E-21"
+        izz="0.00012249" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ros2_picar/meshes/laser_scan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ros2_picar/meshes/laser_scan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_laser"
+    type="fixed">
+    <origin
+      xyz="0.0098765 -0.12919 0.018384"
+      rpy="1.5708 -1.4829 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_scan" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
