@@ -11,11 +11,12 @@ fps = 15
 width = 320
 height = 240
 
-class StreamNode(Node):
+class ServerSubscriber(Node):
     def __init__(self):
         super().__init__("rtsp_server_node")
-        self.subcriber = self.create_subscription(Image, "image", self.image_callback, 10)
+        self.subscriber = self.create_subscription(Image, "image", self.image_callback, 10)
         self.bridge = cv_bridge.CvBridge()
+
     def image_callback(self, msg):
-        image = self.bridge.imgmsg_to_cv2(msg, desired_encoding="passthrough")
+        image = self.bridge.imgmsg_to_cv2(msg)
         
