@@ -7,7 +7,7 @@ def map_range(x, in_min, in_max, out_min, out_max):
   return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
 
 class DriveInterface:
-    def __init__(self, pwm_freq=20000000, pwm_pin=0, 
+    def __init__(self, pwm_freq=5000000, pwm_pin=0, 
                  forward_pin=16, backward_pin=15):
         self.connection = rpyc.connect("localhost", 18811)
         self.pwm_freq = pwm_freq
@@ -15,6 +15,8 @@ class DriveInterface:
         self.f_pin = forward_pin
         self.r_pin = backward_pin
         self.pwm_pin = pwm_pin
+        os.system("gpio mode 15 out")
+        os.system("gpio mode 16 out")
     def get_duty_cycle(self, duty):
         if (duty > 1):
             print("Duty cycle greater than 1, setting to 1")

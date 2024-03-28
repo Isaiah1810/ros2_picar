@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://ros2_picar/meshes/base_link.STL" />
+          filename="package://ros2_picar/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://ros2_picar/meshes/base_link.STL" />
+          filename="package://ros2_picar/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://ros2_picar/meshes/laser_scan.STL" />
+          filename="package://ros2_picar/laser_scan.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://ros2_picar/meshes/laser_scan.STL" />
+          filename="package://ros2_picar/laser_scan.STL" />
       </geometry>
     </collision>
   </link>
