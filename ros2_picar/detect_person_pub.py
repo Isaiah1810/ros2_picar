@@ -28,7 +28,7 @@ class Publisher(Node):
         super().__init__('person_detecor_publisher')
         self.subsciber = self.create_subscription(Image, "image", self.image_callback, 10)
         self.img_publisher = self.create_publisher(Image, 'yolo_image', 10)
-        self.text_publisher = self.create_publisher(String, "yolo_text", 10)
+        self.str_publisher = self.create_publisher(String, "yolo_text", 10)
         self.frame = np.zeros((640, 640, 3))
         self.bridge = CvBridge()
         self.rknn_lite = RKNNLite(verbose=False)
@@ -41,7 +41,7 @@ class Publisher(Node):
         self.new_frame = self.frame
         self.detect()
 
-    def draw(image, boxes, scores, classes):
+    def draw(self, image, boxes, scores, classes):
         """Draw the boxes on the image.
 
         # Argument:

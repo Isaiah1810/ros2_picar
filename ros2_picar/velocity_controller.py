@@ -7,7 +7,7 @@ def map_range(x, in_min, in_max, out_min, out_max):
   return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
 
 class DriveInterface:
-    def __init__(self, pwm_freq=5000000, pwm_pin=0, 
+    def __init__(self, pwm_freq=20000000, pwm_pin=0, 
                  forward_pin=16, backward_pin=15):
         self.connection = rpyc.connect("localhost", 18811)
         self.pwm_freq = pwm_freq
@@ -57,6 +57,7 @@ class SteeringInterface:
                                  bytesize=serial.EIGHTBITS,
                                  parity=serial.PARITY_NONE,
                                  stopbits=serial.STOPBITS_ONE)
+        self.set_freq(260)
 
     def set_freq(self, freq):
         if(freq > 999): return 1
