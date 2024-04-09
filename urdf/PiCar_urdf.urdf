@@ -4,12 +4,12 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="PiCar_urdf">
-  <link
+<link
     name="base_link">
     <inertial>
       <origin
-        xyz="0 0 0"
-        rpy="0 1.57 0" />
+        xyz="8.232E-05 -0.068754 0.01704"
+        rpy="0 0 0" />
       <mass
         value="1.1902" />
       <inertia
@@ -106,3 +106,4 @@
     <link name="base_footprint">
     </link>
 </robot>
+

@@ -25,6 +25,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'detect_person_pub = ros2_picar.detect_person_pub:main',
+            'stream_ros = ros2_picar.stream_ros:main'
         ],
     },
 )

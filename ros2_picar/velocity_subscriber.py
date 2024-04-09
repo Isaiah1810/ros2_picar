@@ -14,8 +14,13 @@ class VelocitySubscriber(Node):
     
     def subscription_callback(self, msg):
         self.steering.set_dir(msg.steering_angle)
-        self.driver.set_motor_velocity(msg.speed)
+        self.driver.set_motor_velocity(0.5)
 
     def e_stop_callback(self, msg):
         self.driver.set_motor_velocity(0)
         self.steering.set_dir(0)
+
+if __name__ == "__main__":
+    rclpy.init()
+    S = VelocitySubscriber()
+    rclpy.spin(S)
